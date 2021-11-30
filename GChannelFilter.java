@@ -9,7 +9,7 @@ import java.awt.Color;
 public class GChannelFilter extends Filter
 {
     /**
-     * Constructor for objects of class RChannelFilter.
+     * Constructor for objects of class GChannelFilter.
      * @param name The name of the filter.
      */
     public GChannelFilter(String name)

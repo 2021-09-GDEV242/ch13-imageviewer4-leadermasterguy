@@ -9,7 +9,7 @@ import java.awt.Color;
 public class BChannelFilter extends Filter
 {
     /**
-     * Constructor for objects of class RChannelFilter.
+     * Constructor for objects of class BChannelFilter.
      * @param name The name of the filter.
      */
     public BChannelFilter(String name)

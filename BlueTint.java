@@ -1,7 +1,7 @@
 import java.awt.Color;
 
 /**
- * An image filter to display the red channel.
+ * An image filter to tint it blue.
  * 
  * @author Nicholas Trilone
  * @version 2021.11.29
@@ -9,14 +9,13 @@ import java.awt.Color;
 public class BlueTint extends Filter
 {
     /**
-     * Constructor for objects of class RChannelFilter.
+     * Constructor for objects of class BlueTint.
      * @param name The name of the filter.
      */
     public BlueTint(String name)
     {
         super(name);
     }
-    //getRed()
     /**
      * Apply this filter to an image.
      * 
@@ -28,7 +27,13 @@ public class BlueTint extends Filter
         int width = image.getWidth();
         for(int y = 0; y < height; y++) {
             for(int x = 0; x < width; x++) {
-                image.setPixel(x, y, new Color(0,0,0));
+                int red = image.getPixel(x, y).getRed();
+                int green = image.getPixel(x, y).getGreen();
+                int blue = image.getPixel(x, y).getBlue()*2;
+                if(blue>255){
+                    blue=255;
+                }
+                image.setPixel(x, y, new Color(red,green,blue));
             }
         }
     }
