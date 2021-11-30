@@ -9,14 +9,13 @@ import java.awt.Color;
 public class WarholFilter extends Filter
 {
     /**
-     * Constructor for objects of class RChannelFilter.
+     * Constructor for objects of class WarholFilter.
      * @param name The name of the filter.
      */
     public WarholFilter(String name)
     {
         super(name);
     }
-    //getRed()
     /**
      * Apply this filter to an image.
      * 
@@ -26,11 +25,19 @@ public class WarholFilter extends Filter
     {
         int height = image.getHeight();
         int width = image.getWidth();
-        for(int y = 0; y < height; y++) {
-            for(int x = 0; x < width; x++) {
-                image.setPixel(x, y, new Color(0,0,0));
+        
+        //topleft
+        for(int y = 0; y < height/2; y++) {
+            for(int x = 0; x < width/2; x++) {
+                image.setPixel(x, y, image.getPixel(x*2,y*2));
             }
         }
+        
+        //topright
+        for(int y = 0; y < height/2; y++) {
+            for(int x = width/2; x < width; x++) {
+                image.setPixel(x, y, image.getPixel(x-width/2,y));
+            }
+        }
+        }
     }
-
-}
