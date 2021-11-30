@@ -16,7 +16,6 @@ public class RChannelFilter extends Filter
     {
         super(name);
     }
-    //getRed()
     /**
      * Apply this filter to an image.
      * 
@@ -28,7 +27,8 @@ public class RChannelFilter extends Filter
         int width = image.getWidth();
         for(int y = 0; y < height; y++) {
             for(int x = 0; x < width; x++) {
-                image.setPixel(x, y, new Color(0,0,0));
+                int red = image.getPixel(x, y).getRed();
+                image.setPixel(x, y, new Color(red,red,red));
             }
         }
     }

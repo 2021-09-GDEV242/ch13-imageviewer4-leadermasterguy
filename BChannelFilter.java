@@ -28,7 +28,8 @@ public class BChannelFilter extends Filter
         int width = image.getWidth();
         for(int y = 0; y < height; y++) {
             for(int x = 0; x < width; x++) {
-                image.setPixel(x, y, new Color(0,0,0));
+                int blue = image.getPixel(x, y).getBlue();
+                image.setPixel(x, y, new Color(blue,blue,blue));
             }
         }
     }

@@ -1,7 +1,7 @@
 import java.awt.Color;
 
 /**
- * An image filter to display the red channel.
+ * An image filter to display the green channel.
  * 
  * @author Nicholas Trilone
  * @version 2021.11.29
@@ -28,7 +28,8 @@ public class GChannelFilter extends Filter
         int width = image.getWidth();
         for(int y = 0; y < height; y++) {
             for(int x = 0; x < width; x++) {
-                image.setPixel(x, y, new Color(0,0,0));
+                int green = image.getPixel(x, y).getGreen();
+                image.setPixel(x, y, new Color(green,green,green));
             }
         }
     }

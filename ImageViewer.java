@@ -254,7 +254,7 @@ public class ImageViewer
         filterList.add(new GreenTint("Green Tint"));
         filterList.add(new BlueTint("Blue Tint"));
         filterList.add(new WarholFilter("Warhol"));
-        filterList.add(new FlipperWarholFilter("Flipped Warhol"));
+        filterList.add(new FlippedWarholFilter("Flipped Warhol"));
         return filterList;
     }
     
