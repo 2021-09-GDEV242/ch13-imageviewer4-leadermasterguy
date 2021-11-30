@@ -1,33 +1,36 @@
+import java.awt.Color;
 
 /**
- * Write a description of class GChannelFilter here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * An image filter to display the red channel.
+ * 
+ * @author Nicholas Trilone
+ * @version 2021.11.29
  */
-public class GChannelFilter
+public class GChannelFilter extends Filter
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
     /**
-     * Constructor for objects of class GChannelFilter
+     * Constructor for objects of class RChannelFilter.
+     * @param name The name of the filter.
      */
-    public GChannelFilter()
+    public GChannelFilter(String name)
     {
-        // initialise instance variables
-        x = 0;
+        super(name);
+    }
+    //getRed()
+    /**
+     * Apply this filter to an image.
+     * 
+     * @param  image  The image to be changed by this filter.
+     */
+    public void apply(OFImage image)
+    {
+        int height = image.getHeight();
+        int width = image.getWidth();
+        for(int y = 0; y < height; y++) {
+            for(int x = 0; x < width; x++) {
+                image.setPixel(x, y, new Color(0,0,0));
+            }
+        }
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }

@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 /**
  * An image filter to display the red channel.
  * 
@@ -14,7 +16,7 @@ public class RChannelFilter extends Filter
     {
         super(name);
     }
-
+    //getRed()
     /**
      * Apply this filter to an image.
      * 
@@ -26,7 +28,7 @@ public class RChannelFilter extends Filter
         int width = image.getWidth();
         for(int y = 0; y < height; y++) {
             for(int x = 0; x < width; x++) {
-                image.setPixel(x, y, image.getPixel(x, y).brighter());
+                image.setPixel(x, y, new Color(0,0,0));
             }
         }
     }
