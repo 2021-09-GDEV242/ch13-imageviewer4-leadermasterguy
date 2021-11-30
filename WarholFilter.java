@@ -1,7 +1,7 @@
 import java.awt.Color;
 
 /**
- * An image filter to display the red channel.
+ * A warhol filter.
  * 
  * @author Nicholas Trilone
  * @version 2021.11.29
